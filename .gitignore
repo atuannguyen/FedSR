@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.nfs*
+build/
+dist/
+*.egg-info/
+site/
+
+data/*
+experiment_results/*
+experiment_results_2/*
+experiment_results_feddg/*
+experiments/*
+*.out
+*.zip
+*.log
