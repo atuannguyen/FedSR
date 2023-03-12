@@ -44,7 +44,10 @@ if args.distributed:
 
     if args.rank == 0:
         ip = socket.gethostbyname(socket.gethostname())
-        port = find_free_port()
+        if 'MASTER_PORT' in os.environ:
+            port = os.environ['MASTER_PORT']
+        else:
+            port = find_free_port()
         endpoint = '{}{}:{}'.format('tcp://', ip, port)
         os.environ['MASTER_ADDR'] = endpoint
         with open(hostfile, "w") as f:
